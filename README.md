@@ -1,6 +1,6 @@
 # **Student-Led-Tutorial: Genome Annotation Using Prokka**
 ### **Task**: Annotate a Bacterial Genome and Submit to a Public Repository
-### **Date**: April 10th
+### **Date**: April 17th
 
 ---
 
