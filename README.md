@@ -71,7 +71,7 @@ prokka --outdir prokka_output --prefix bradyrhizobium --genus Bradyrhizobium --s
 - bradyrhizobium.tbl: Table file for GenBank submission.
 
 ### **Step 4: Visualization Using Artemis**
-1. Install Artemis (or any other genome browser)
+1. Install Artemis (or any other genome browser). The IGV viewer is a good online alternative (https://igv.org/app/)
 ``` bash
 wget https://sanger-pathogens.github.io/Artemis/Artemis/
 tar zxf artemis-unix-release-18.0.0.tar.gz
