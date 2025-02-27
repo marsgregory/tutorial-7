@@ -37,10 +37,57 @@ A draft genome of a bacterial species relevant to agriculture, healthcare, or th
 ---
 
 ## **Step-by-Step Tutorial**
-
+### Fork and clone repository(?)
 ### **Step 1: Install Prokka**
-1. Install Prokka on your system or use a server with Prokka pre-installed.
+The HPC server has Prokka pre-installed.
    ```bash
-   conda install -c bioconda prokka
+   module load prokka/1.14.5
+   ```
+### **Step 2: Download the Genome**
+1. Download the genome FASTA file from NCBI or JGI.
+``` bash
+wget https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/011/365/GCF_000011365.1_ASM1136v1/GCF_000011365.1_ASM1136v1_genomic.fna.gz
+```
+2. Decompress the genome file
+``` bash
+gunzip GCF_000011365.1_ASM1136v1_genomic.fna.gz
+```
+2. Rename genome file for simplicity
+``` bash
+mv GCF_000011365.1_ASM1136v1_genomic.fna genome.fasta
+```
+### **Step 3: Annotate the Genome Using Prokka**
+1. Run Prokka to annotate the genome:
+``` bash
+prokka --outdir prokka_output --prefix bradyrhizobium --genus Bradyrhizobium --species japonicum genome.fasta
+```
+- --outdir: Directory for output files.
+- --prefix: Prefix for output filenames.
+- --genus and --species: Specify the organism's name.
+2. Key output files in prokka_output/:
+- bradyrhizobium.gff: General Feature Format file with annotations.
+- bradyrhizobium.faa: Predicted proteins.
+- bradyrhizobium.ffn: Predicted coding sequences (CDS).
+- bradyrhizobium.tbl: Table file for GenBank submission.
 
-UNDER CONSTRUCTION
+### **Step 4: Visualization Using Artemis**
+1. Install Artemis (or any other genome browser)
+``` bash
+wget https://sanger-pathogens.github.io/Artemis/Artemis/
+tar zxf artemis-unix-release-18.0.0.tar.gz
+```
+2. To run Artemis:
+``` bash
+artemis/art prokka_output/bradyrhizobium.gff
+```
+- Explore coding regions, functional annotations, and structural features.
+### **Step 5: Validate Annotations**
+1. Check for functional annotations:
+- Identify key genes, such as those involved in nitrogen fixation (e.g., nif genes).
+- Use KEGG Mapper to map annotated genes to metabolic pathways:
+- Upload bradyrhizobium.faa to KEGG Blast Koala (https://www.kegg.jp/blastkoala/).
+- Enter blastkopala generated KO numbers into the KEGG MAPPER- RECONSTRUCT (https://www.genome.jp/kegg/mapper/reconstruct.html)
+
+### **Step 6: Results Discussion**
+
+
