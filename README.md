@@ -64,12 +64,19 @@ prokka --outdir prokka_output --prefix bradyrhizobium --genus Bradyrhizobium --s
 - --outdir: Directory for output files.
 - --prefix: Prefix for output filenames.
 - --genus and --species: Specify the organism's name.
-2. Key output files in prokka_output/:
-- bradyrhizobium.gff: General Feature Format file with annotations.
-- bradyrhizobium.faa: Predicted proteins.
-- bradyrhizobium.ffn: Predicted coding sequences (CDS).
-- bradyrhizobium.tbl: Table file for GenBank submission.
-
+2. Push key output files in prokka_output/:
+```
+cd prokka_output
+```
+```
+git add bradyrhizobium.faa
+git commit -m "KEGG file"
+git push origin main
+```
+```
+git add bradyrhizobium.gbk
+git commit -m "IGV file"
+```
 ### **Step 4: Visualization Using Artemis**
 1. Install Artemis (or any other genome browser). The IGV viewer is a good online alternative (https://igv.org/app/)
 ``` bash
