@@ -76,6 +76,7 @@ git push origin main
 ```
 git add bradyrhizobium.gbk
 git commit -m "IGV file"
+git push origin main
 ```
 ### **Step 4: Visualization Using Artemis**
 1. Install Artemis (or any other genome browser). The IGV viewer is a good online alternative (https://igv.org/app/)
