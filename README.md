@@ -78,23 +78,20 @@ git add bradyrhizobium.gbk
 git commit -m "IGV file"
 git push origin main
 ```
-### **Step 4: Visualization Using Artemis**
-1. Install Artemis (or any other genome browser). The IGV viewer is a good online alternative (https://igv.org/app/)
-``` bash
-wget https://sanger-pathogens.github.io/Artemis/Artemis/
-tar zxf artemis-unix-release-18.0.0.tar.gz
-```
-2. To run Artemis:
-``` bash
-artemis/art prokka_output/bradyrhizobium.gff
-```
-- Explore coding regions, functional annotations, and structural features.
-### **Step 5: Validate Annotations**
+### **Step 4: Validate Annotations**
 1. Check for functional annotations:
 - Identify key genes, such as those involved in nitrogen fixation (e.g., nif genes).
 - Use KEGG Mapper to map annotated genes to metabolic pathways:
 - Upload bradyrhizobium.faa to KEGG Blast Koala (https://www.kegg.jp/blastkoala/).
+- Send results to your SVSU email.
 - Enter blastkopala generated KO numbers into the KEGG MAPPER- RECONSTRUCT (https://www.genome.jp/kegg/mapper/reconstruct.html)
+### **Step 5: Visualization Using IGV**
+1. Navigate to IGV (https://igv.org/app/)
+- Genome -> File
+- select .gbk file
+2. Explore coding regions, functional annotations, and structural features.
+- search "nif" to find nitrogen fixing gene
+- other key genes?
 
 ### **Step 6: Results Discussion**
 
